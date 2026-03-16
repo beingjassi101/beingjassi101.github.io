@@ -109,6 +109,11 @@
     .proj-metrics { margin-top: 24px; display: flex; gap: 24px; }
     .metric { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--orchid); line-height: 1; }
     .metric-lbl { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-top: 4px; }
+    .proj-links-row { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .proj-link-gh { display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,0.6); border: 1.5px solid rgba(255,255,255,0.18); padding: 9px 20px; text-decoration: none; transition: border-color .2s, color .2s, transform .2s; }
+    .proj-link-gh:hover { border-color: var(--orchid); color: var(--orchid); transform: translate(-2px,-2px); }
+    .proj-link-live { display: inline-flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; background: var(--orchid); color: var(--black); padding: 9px 20px; text-decoration: none; font-weight: 700; transition: transform .2s, box-shadow .2s; }
+    .proj-link-live:hover { transform: translate(-3px,-3px); box-shadow: 5px 5px 0 var(--purple); }
 
     /* TIMELINE */
     #experience { background: var(--black); padding: 120px 52px; }
@@ -499,6 +504,26 @@
         </div>
       </div>
 
+      <div class="proj-card reveal" style="transition-delay:.08s">
+        <div class="proj-num">05</div>
+        <div class="proj-tag">Data Analytics</div>
+        <h3 class="proj-title">Millennial vs Baby Boomer Employment Analysis</h3>
+        <p class="proj-desc">Analysed 62M+ U.S. worker records across 51 states, 366 metro areas, and 23 occupational sectors to quantify how two generations fared through the Great Recession (2007–2013). Built a Power BI dashboard and automated the full pipeline with Python &amp; Pandas — surfacing structural labour-market shifts invisible at the aggregate level.</p>
+        <div class="proj-metrics">
+          <div><div class="metric">+9.7%</div><div class="metric-lbl">Boomer Job Growth</div></div>
+          <div><div class="metric">+0.3%</div><div class="metric-lbl">Millennial Job Growth</div></div>
+          <div><div class="metric">51/51</div><div class="metric-lbl">States — BB Growth</div></div>
+          <div><div class="metric">23/51</div><div class="metric-lbl">States — ML Growth</div></div>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://beingjassi101.github.io/millennial-vs-boomer-employment-analysis/" target="_blank" class="proj-link-gh">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+          <a href="https://beingjassi101.github.io/millennial-vs-boomer-employment-analysis/powerbi_dashboard.html" target="_blank" class="proj-link-live">Dashboard ↗</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -589,7 +614,7 @@
 <section id="email">
   <div class="email-left reveal">
     <div class="email-label">Reach Out Directly</div>
-    <div class="email-addr"><a href="mailto:jsbharaj@protonmail.com">jsbharaj@protonmail.com</a></div>
+    <div class="email-addr"><a href="/cdn-cgi/l/email-protection#e9839a8b81889b8883a9999b869d868784888085c78a8684"><span class="__cf_email__" data-cfemail="fc968f9e949d8e9d96bc8c8e93889392919d9590d29f9391">[email&#160;protected]</span></a></div>
   </div>
   <button class="email-copy-btn reveal" onclick="navigator.clipboard.writeText('jsbharaj@protonmail.com');this.textContent='Copied ✓'">Copy Email</button>
 </section>
@@ -606,7 +631,7 @@
   <div class="footer-copy">© 2025 Jaspreet Singh Bharaj</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // CURSOR
   const cur = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -624,9 +649,11 @@
   },55);
 
   // REVEAL
-  const revs=document.querySelectorAll('.reveal');
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1});
-  revs.forEach(el=>io.observe(el));
+  const revs = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revs.forEach(r => obs.observe(r));
 </script>
 </body>
 </html>
